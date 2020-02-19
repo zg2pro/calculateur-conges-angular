@@ -7,6 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {FormsModule} from '@angular/forms';
 
 const modules = [
   BrowserModule,
@@ -21,7 +22,7 @@ const modules = [
   declarations: [
     AppComponent
   ],
-  imports: [...modules],
+  imports: [...modules, FormsModule],
   exports: [...modules],
   providers: [],
   bootstrap: [AppComponent]

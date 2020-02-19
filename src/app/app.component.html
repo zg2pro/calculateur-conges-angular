@@ -11,13 +11,29 @@
 </div>
 
 <div class="content" role="main">
-hello
+
   <mat-form-field>
-    <mat-label>Choose a date</mat-label>
-    <input matInput [matDatepicker]="picker">
+    <mat-label>Date du début de la période</mat-label>
+    <input matInput [matDatepicker]="picker"
+           [(ngModel)]="startDate"
+           (dateChange)="watchMethod()">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+    <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
-world
+
+  <mat-form-field>
+    <mat-label>Date de fin de la période</mat-label>
+    <input matInput [matDatepicker]="picker"
+           [(ngModel)]="endDate"
+           (dateChange)="watchMethod()">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <br/>
+  <hr/>
+  <br/>
+
+RESULT: {{result}}
 </div>
 
