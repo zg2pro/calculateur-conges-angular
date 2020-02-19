@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'calculateur-conges-angular';
+  startDate = new Date(2019, 9, 1);
 }
