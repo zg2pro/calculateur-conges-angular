@@ -8,7 +8,6 @@ import {MatInputModule} from '@angular/material/input';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
-//import {ApplicationModule} from './../plugins/angular.nest.module';
 
 const modules = [
   BrowserModule,
@@ -17,8 +16,7 @@ const modules = [
   MatFormFieldModule,
   MatMomentDateModule,
   MatInputModule,
-  FormsModule,
- // ApplicationModule
+  FormsModule
 ];
 
 @NgModule({
