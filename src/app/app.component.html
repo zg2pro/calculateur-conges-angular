@@ -14,20 +14,20 @@
 
   <mat-form-field>
     <mat-label>Date du début de la période</mat-label>
-    <input matInput [matDatepicker]="picker"
+    <input matInput [matDatepicker]="pickerStartDate"
            [(ngModel)]="startDate"
            (dateChange)="watchMethod()">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
+    <mat-datepicker-toggle matSuffix [for]="pickerStartDate"></mat-datepicker-toggle>
+    <mat-datepicker #pickerStartDate></mat-datepicker>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Date de fin de la période</mat-label>
-    <input matInput [matDatepicker]="picker"
+    <input matInput [matDatepicker]="pickerEndDate"
            [(ngModel)]="endDate"
            (dateChange)="watchMethod()">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
+    <mat-datepicker-toggle matSuffix [for]="pickerEndDate"></mat-datepicker-toggle>
+    <mat-datepicker #pickerEndDate></mat-datepicker>
   </mat-form-field>
 
   <br/>

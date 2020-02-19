@@ -2,6 +2,7 @@ import { Component, Inject  } from '@angular/core';
 import {MatDatepickerInputEvent} from '@angular/material/datepicker';
 import { AppService as CalculatorService } from '@zg2pro-org/calculateur-conges-api/dist/app.service';
 import { CalculationInput } from '@zg2pro-org/calculateur-conges-api/dist/calculation-input';
+import moment from 'moment';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,8 @@ import { CalculationInput } from '@zg2pro-org/calculateur-conges-api/dist/calcul
   providers: [CalculatorService]
 })
 export class AppComponent {
-  startDate = new Date(2019, 9, 1);
-  endDate = new Date(2020, 9, 1);
+  startDate = moment('2019-09-01', 'YYYY-MM-DD');
+  endDate = moment('2020-09-01', 'YYYY-MM-DD');
 
   result = 0;
 
@@ -20,11 +21,11 @@ export class AppComponent {
   watchMethod() {
     console.log(this.startDate);
     let ci = new CalculationInput();
-    ci.endDate = this.endDate.toDateString();
-    ci.startDate = this.startDate.toDateString();
+    ci.endDate = this.endDate.format('DD-MM-YYYY');
+    ci.startDate =  this.startDate.format('DD-MM-YYYY');
     ci.unpaidWeeks = 0;
     ci.extraUnpaidDays = 0;
     ci.businessOpenOnSaturdays = false;
-    this.calculatorService.calculation(ci);
+    this.result = this.calculatorService.calculation(ci);
   }
 }
