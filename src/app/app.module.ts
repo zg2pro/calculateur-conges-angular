@@ -1,16 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {InjectionToken, NgModule} from '@angular/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMomentDateModule} from '@angular/material-moment-adapter';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSliderModule} from '@angular/material/slider';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import {MDBBootstrapModule} from 'angular-bootstrap-md';
 
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+
 
 const modules = [
   BrowserModule,
@@ -21,8 +23,10 @@ const modules = [
   MatInputModule,
   FormsModule,
   MatCheckboxModule,
-  MatSliderModule
+  MatSliderModule,
+  HttpClientModule
 ];
+
 
 @NgModule({
   declarations: [
@@ -31,7 +35,9 @@ const modules = [
   imports: [...modules,
     MDBBootstrapModule.forRoot()],
   exports: [...modules],
-  providers: [],
+  providers: [,
+    ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

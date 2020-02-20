@@ -63,3 +63,8 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  */
 import * as process from 'process';
 window['process'] = process;
+
+
+/** Evergreen browsers require these. **/
+// Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
+import 'core-js/es/reflect';
