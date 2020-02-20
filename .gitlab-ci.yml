@@ -34,7 +34,7 @@ pages:
     - build
   script:
     - mkdir public
-    - cp -R dist/* public/
+    - cp -R dist/calculateur-conges-angular/* public/
     - cd ..
   artifacts:
     paths:
