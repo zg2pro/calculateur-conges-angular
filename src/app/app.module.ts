@@ -4,6 +4,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatMomentDateModule} from '@angular/material-moment-adapter';
 import {MatInputModule} from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSliderModule} from '@angular/material/slider';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,14 +19,17 @@ const modules = [
   MatFormFieldModule,
   MatMomentDateModule,
   MatInputModule,
-  FormsModule
+  FormsModule,
+  MatCheckboxModule,
+  MatSliderModule
 ];
 
 @NgModule({
   declarations: [
     AppComponent
   ],
-  imports: [...modules],
+  imports: [...modules,
+    MDBBootstrapModule.forRoot()],
   exports: [...modules],
   providers: [],
   bootstrap: [AppComponent]

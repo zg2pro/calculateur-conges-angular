@@ -27,6 +27,7 @@ p {
 .toolbar {
   height: 60px;
   margin-left: 3px;
+  margin-bottom: 50px;
   display: flex;
   align-items: center;
   background-color: #1976d2;
@@ -43,6 +44,12 @@ p {
   margin: 0 16px;
 }
 
-.content {
-  margin: 25px;
+.row {
+  margin: 20px;
+}
+
+mat-slider {
+  width: 300px;
+  margin-left: 10px;
+  margin-top: -15px;
 }

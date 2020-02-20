@@ -10,30 +10,50 @@
   pour importer un service NestJs.
 </div>
 
-<div class="content" role="main">
+<div class="container" role="main">
 
-  <mat-form-field>
-    <mat-label>Date du début de la période</mat-label>
-    <input matInput [matDatepicker]="pickerStartDate"
-           [(ngModel)]="startDate"
-           (dateChange)="watchMethod()">
-    <mat-datepicker-toggle matSuffix [for]="pickerStartDate"></mat-datepicker-toggle>
-    <mat-datepicker #pickerStartDate></mat-datepicker>
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Date de fin de la période</mat-label>
-    <input matInput [matDatepicker]="pickerEndDate"
-           [(ngModel)]="endDate"
-           (dateChange)="watchMethod()">
-    <mat-datepicker-toggle matSuffix [for]="pickerEndDate"></mat-datepicker-toggle>
-    <mat-datepicker #pickerEndDate></mat-datepicker>
-  </mat-form-field>
-
+  <div class="row">
+    <div class="col-sm">
+      <mat-form-field>
+        <mat-label>Date du début de la période</mat-label>
+        <input matInput [matDatepicker]="pickerStartDate"
+               [(ngModel)]="startDate"
+               (dateChange)="watchMethod()">
+        <mat-datepicker-toggle matSuffix [for]="pickerStartDate"></mat-datepicker-toggle>
+        <mat-datepicker #pickerStartDate></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-sm">
+      <mat-form-field>
+        <mat-label>Date de fin de la période</mat-label>
+        <input matInput [matDatepicker]="pickerEndDate"
+               [(ngModel)]="endDate"
+               (dateChange)="watchMethod()">
+        <mat-datepicker-toggle matSuffix [for]="pickerEndDate"></mat-datepicker-toggle>
+        <mat-datepicker #pickerEndDate></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+      <mat-checkbox [(ngModel)]="ci.businessOpenOnSaturdays"
+                    (change)="watchMethod()">Votre entreprise permet-elle de travailler le samedi ?</mat-checkbox>
+  </div>
+  <div class="row">
+      <mat-label>Nombre de semaines de congé sans solde sur la période</mat-label>
+      <mat-slider  [(ngModel)]="ci.unpaidWeeks"  min="1" max="30" thumbLabel
+                   (change)="watchMethod()"
+                   ></mat-slider>
+  </div>
+  <div class="row">
+      <mat-label>Nombre de jours en plus de ces semaines de congé sans solde sur la période</mat-label>
+      <mat-slider  [(ngModel)]="ci.extraUnpaidDays"  min="1" max="20" thumbLabel
+                   (change)="watchMethod()"
+                   ></mat-slider>
+  </div>
   <br/>
   <hr/>
   <br/>
 
-RESULT: {{result}}
+  RESULTAT: {{result}}
 </div>
 

@@ -1,0 +1,44 @@
+image: node:12.15
+before_script:
+  - set -xe
+stages:
+  - prepare
+  - build
+  - deploy
+cache:
+  paths:
+    - node_modules/
+install_dependencies:
+  stage: prepare
+  script:
+  # this token expires every day anyway
+    - npm config set //registry.npmjs.org/:_authToken=2a593b23-0f7b-42f5-81c3-55c016324b81
+    - npm install
+  artifacts:
+    paths:
+      - node_modules/
+build:
+  stage: build
+  script:
+    - npm run build:prod
+  artifacts:
+    paths:
+      - dist/
+  only:
+    - master
+  tags:
+    - docker
+pages:
+  stage: deploy
+  dependencies:
+    - build
+  script:
+    - mkdir public
+    - cp -R dist/* public/
+    - cd ..
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+    
