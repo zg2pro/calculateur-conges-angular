@@ -1,4 +1,4 @@
-import {Component, Inject, Injectable, InjectionToken} from '@angular/core';
+import {Component, Inject, Injectable} from '@angular/core';
 import { CalculatorService } from '@zg2pro-org/calculateur-conges-api/dist/calculator/calculator.service';
 import { SelfService } from '@zg2pro-org/calculateur-conges-api/dist/calculator/self.service';
 import { CalculatorInput } from '@zg2pro-org/calculateur-conges-api/dist/calculator/calculator-input';
